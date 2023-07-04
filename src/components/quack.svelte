@@ -4,6 +4,52 @@
   const { quote, author, image } = quack;
 </script>
 
-<img src="{image}" alt="">
-<p>{ quote }</p>
-<span>- { author }</span>
+<div class="quack">
+  <img src="{image}" alt="">
+  <span>
+    <p>{ quote }</p>
+    <span>- { author }</span>
+  </span>
+</div>
+
+<style lang="scss">
+  .quack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+
+    color: #fff;
+
+    img {
+      grid-column: 1;
+
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+
+      border-radius: var(--border-radius);
+    }
+  
+    > span {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--spacing-s);
+
+      grid-column: 2;
+      
+      margin: 0;
+
+      p {
+        margin: 0;
+        
+        font-size: 2rem;
+        font-style: italic;
+      }
+      
+      > span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+</style>

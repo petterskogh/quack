@@ -1,0 +1,19 @@
+:root {
+  --bg-color: #20281f;
+  --foreground-color: #f2f2f2;
+
+  --spacing-s: 1rem;
+  --spacing-m: 2rem;
+
+  --border-radius: 1rem;
+
+  --font-family: 'Times New Roman';
+  --font-family-sans-serif: Arial;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #20281f;
+}
