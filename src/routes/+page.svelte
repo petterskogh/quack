@@ -1,13 +1,14 @@
 <script>
-  import Quack from "../components/Quack.svelte";
-  import QuackButton from "../components/QuackButton.svelte";
+  import Quack from "$lib/components/Quack.svelte";
+  import QuackButton from "$lib/components/QuackButton.svelte";
+
   export let data;
 </script>
 
 <main>
   <Quack quack="{data}"></Quack>
 
-  <QuackButton></QuackButton>
+  <QuackButton />
 
   <div class="attribution">
     <span>Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></span>
