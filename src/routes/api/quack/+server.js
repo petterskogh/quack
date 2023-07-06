@@ -8,10 +8,10 @@ export async function GET() {
     .then(res => res.json())
     .then(data => data[0]);
 
-  return json({
+  return json({ 
     quote,
     author: replaceBeforeVowel(author, 'Quack'),
-    image
+    image 
   });
 }
 
@@ -24,16 +24,9 @@ export async function GET() {
 function replaceBeforeVowel(str, replacement) {
   const match = str.match(/[aeiou]/i);
 
-  let index;
-  if(match) {
-    if (match.length >= 2) {
-      index = str.indexOf(match[1]);
-    } else {
-      index = str.indexOf(match[0]);
-    }
-  } else {
+  if(!match) {
     return replacement + str.slice(1);
   }
 
-  return replacement + str.slice(index);
+  return replacement + str.slice(str.indexOf(match[0]));
 }

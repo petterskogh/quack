@@ -4,6 +4,7 @@
 
   --spacing-s: 1rem;
   --spacing-m: 2rem;
+  --spacing-l: 4rem;
 
   --border-radius: 1rem;
 
@@ -16,4 +17,8 @@ body {
   padding: 0;
 
   background-color: #20281f;
+}
+
+* {
+  box-sizing: border-box;
 }

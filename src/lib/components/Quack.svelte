@@ -18,11 +18,12 @@
     flex-direction: column;
     gap: var(--spacing-m);
 
+    padding-bottom: var(--spacing-s);
+    width: 100%;
+
     color: #fff;
 
     img {
-      grid-column: 1;
-
       width: 100%;
       height: 250px;
       object-fit: cover;
@@ -35,10 +36,6 @@
       flex-direction: column;
       justify-content: center;
       gap: var(--spacing-s);
-
-      grid-column: 2;
-      
-      margin: 0;
 
       p {
         margin: 0;

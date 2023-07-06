@@ -18,9 +18,11 @@
     font-family: var(--font-family-sans-serif);
     font-size: large;
     
-    background-color: #94ff98;
+    background-color: #71f375;
     color: black;
     border: none;
     border-radius: 1rem;
+
+    cursor: pointer;
   }
 </style>
