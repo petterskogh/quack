@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Quack</title>
+</svelte:head>
+
 <script>
   import Loader from "$lib/components/Loader.svelte";
   import Quack from "$lib/components/Quack.svelte";
