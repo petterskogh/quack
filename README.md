@@ -1,33 +1,26 @@
-# create-svelte
+# Quack
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Get started
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+Clone repo and install dependencies:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+  git clone https://github.com/petterskogh/quack.git
+  cd quack
+  npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start server:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+  npm run dev
 ```
+
+Visit link in terminal to view app. To view app on other devices on the same network, run `npm run dev -- --host` and visit the link in the terminal on the other device.
 
 ## Building
 
-To create a production version of your app:
+To create a production version of the app:
 
 ```bash
 npm run build
