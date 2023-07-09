@@ -7,6 +7,13 @@ export async function GET() {
   const { quote, author } = await fetch('https://zenquotes.io/api/quotes')
     .then(res => res.json())
     .then(data => { 
+      if(data[0].a === 'zenquotes.io') {
+        return {
+          quote: 'I cannot quack anymore. I\'m sorry.',
+          author: 'Adm. Quack'
+        }
+      }
+
       return {
         quote: data[0].q,
         author: quackifyAuthor(data[0].a)
