@@ -43,6 +43,8 @@
       flex-direction: column;
       justify-content: center;
       gap: var(--spacing-s);
+
+      font-family: var(--font-family);
       
       &:after {
         content: '';

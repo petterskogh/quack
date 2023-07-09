@@ -6,9 +6,6 @@
   button {
     padding: var(--spacing-s);
 
-    text-decoration: none;
-    text-align: center;
-    font-family: var(--font-family-sans-serif);
     font-size: 2.5rem;
     
     background-color: var(--button-color);
