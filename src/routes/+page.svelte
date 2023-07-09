@@ -2,7 +2,7 @@
   import Loader from "$lib/components/Loader.svelte";
   import Quack from "$lib/components/Quack.svelte";
   import QuackButton from "$lib/components/QuackButton.svelte";
-  import { updateViewportHeightVariable } from "$lib/utils/window";
+  import { updateViewportHeightVariable } from "$lib/utils/viewport";
   import { onMount } from "svelte";
   
   /** @type { import('$lib/types').Quack } */
