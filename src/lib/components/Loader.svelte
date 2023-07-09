@@ -2,19 +2,21 @@
 
 <style lang="scss">
   .loader {
-    margin-top: var(--spacing-l);
-
     font-size: 10rem;
-    animation: spin 1s linear infinite;
+    animation: bobble 0.75s ease-in-out infinite;
   }
 
-  @keyframes spin {
+  @keyframes bobble {
     0% {
-      transform: rotate(0deg);
+      translate: 0 0;
+    }
+
+    50% {
+      translate: 0 2rem;
     }
 
     100% {
-      transform: rotate(360deg);
+      translate: 0 0;
     }
   }
 </style>
