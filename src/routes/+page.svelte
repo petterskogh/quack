@@ -2,6 +2,7 @@
   import Loader from "$lib/components/Loader.svelte";
   import Quack from "$lib/components/Quack.svelte";
   import QuackButton from "$lib/components/QuackButton.svelte";
+  import { updateViewportHeightVariable } from "$lib/utils/window";
   import { onMount } from "svelte";
   
   /** @type { import('$lib/types').Quack } */
@@ -16,7 +17,10 @@
     loading = false;
   };
 
-  onMount(fetchQuack);
+  onMount(() => {
+    fetchQuack();
+    updateViewportHeightVariable();
+  });
 </script>
 
 <main>
@@ -30,8 +34,8 @@
   </div>
 
   <div class="attribution">
-    <span>Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></span>
-    <span>Inspirational ducks provided by <a href="https://random-d.uk/" target="_blank">Duck API</a></span>
+    <span>Inspirational quotes provided by <a href="https://zenquotes.io/">ZenQuotes API</a></span>
+    <span>Inspirational ducks provided by <a href="https://random-d.uk/">Duck API</a></span>
   </div>
 </main>
 
@@ -42,15 +46,26 @@
     align-items: center;
 
     .quack-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
+      display: grid;
+      grid-template-rows: 1fr min-content;
+      gap: var(--spacing-m);
 
-      min-height: 100vh;
+      height: var(--vh);
       width: 100%;
-      max-width: 600px;
+      max-width: 500px;
       padding: var(--spacing-m);
+
+      :global(.loader) {
+        justify-self: center;
+        align-self: flex-start;
+
+        margin-top: var(--spacing-m);
+      }
+
+      :global(button) {
+        justify-self: center;
+        align-self: flex-end;
+      }
     }
 
     .attribution {
@@ -64,6 +79,10 @@
       text-align: center;
 
       color: #fff;
+
+      a {
+        color: var(--button-color);
+      }
     }
   }
 </style>

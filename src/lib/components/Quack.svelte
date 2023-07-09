@@ -6,36 +6,56 @@
 
 <div class="quack">
   <img src="{image}" alt="">
-  <span>
+  <div>
     <p>{ quote }</p>
-    <span>- { author }</span>
-  </span>
+    <span class="author">- { author }</span>
+  </div>
 </div>
 
-<style lang="scss">
+<style lang="scss">  
   .quack {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-m);
 
-    padding-bottom: var(--spacing-s);
     width: 100%;
+    
+    color: var(--foreground-color);
+    overflow: scroll;
 
-    color: #fff;
-
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* Edge */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+    
     img {
       width: 100%;
-      height: 250px;
+      height: 200px;
       object-fit: cover;
-
+      
       border-radius: var(--border-radius);
     }
-  
-    > span {
+    
+    > div {
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: var(--spacing-s);
+      
+      &:after {
+        content: '';
+        display: block;
+  
+        position: sticky;
+        bottom: 0;
+        
+        height: 70px;
+        width: 100%;
+  
+        background: linear-gradient(transparent, var(--bg-color));
+      }
 
       p {
         margin: 0;
@@ -44,7 +64,7 @@
         font-style: italic;
       }
       
-      > span {
+      .author {
         font-size: 1.5rem;
       }
     }
