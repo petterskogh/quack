@@ -38,6 +38,7 @@
   </div>
 
   <div class="attribution">
+    <span>Source code on <a href="https://github.com/petterskogh/quack">GitHub</a></span>
     <span>Inspirational quotes provided by <a href="https://zenquotes.io/">ZenQuotes API</a></span>
     <span>Inspirational ducks provided by <a href="https://random-d.uk/">Duck API</a></span>
   </div>
@@ -76,10 +77,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.25rem;
+      gap: 0.5rem;
 
       margin-bottom: var(--spacing-m);
 
+      font-family: var(--font-family-sans);
       text-align: center;
 
       color: #fff;
