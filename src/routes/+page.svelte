@@ -10,31 +10,32 @@
   import { onMount } from "svelte";
   
   /** @type { import('$lib/types').Quack } */
-  let quack;
+  export let data;
+
   let loading = false;
   const fetchQuack = async () => {
     loading = true;
 
     const res = await fetch("/api/quack");
-    quack = await res.json();
-
+    data = await res.json();
+    
     loading = false;
   };
 
-  onMount(() => {
-    fetchQuack();
-    updateViewportHeightVariable();
-  });
+  onMount(updateViewportHeightVariable);
 </script>
 
 <main>
   <div class="quack-content">
-    { #if loading || !quack }
+    { #if loading || !data }
       <Loader />
     { :else }
-      <Quack { quack } />
+      <Quack quack={ data } />
     { /if }
-    <QuackButton on:click={ fetchQuack } />
+    
+    <form method="get">
+      <QuackButton on:click={ fetchQuack } />
+    </form>
   </div>
 
   <div class="attribution">
@@ -66,10 +67,11 @@
 
         margin-top: var(--spacing-m);
       }
-
-      :global(button) {
-        justify-self: center;
-        align-self: flex-end;
+      
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
 
